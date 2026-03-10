@@ -23,6 +23,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
         // Retrieve language from localStorage safely
         const storedLang = localStorage.getItem("app_lang") as Language | null;
         if (storedLang && (storedLang === "ru" || storedLang === "kz")) {
+            // eslint-disable-next-line react-hooks/exhaustive-deps
             setLang(storedLang);
         }
         setMounted(true);

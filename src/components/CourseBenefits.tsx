@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Check, ShieldCheck, TrendingUp, Presentation, Users, Unlock } from "lucide-react";
+import { Check, ShieldCheck, TrendingUp, Presentation, Users, DollarSign } from "lucide-react";
 import { useTranslation } from "@/i18n/LanguageContext";
 
 export function CourseBenefits() {
@@ -10,7 +10,7 @@ export function CourseBenefits() {
         {
             title: t("benefits.b1.title"),
             description: t("benefits.b1.desc"),
-            icon: <Unlock className="h-6 w-6" />
+            icon: <DollarSign className="h-6 w-6" />
         },
         {
             title: t("benefits.b2.title"),
@@ -104,7 +104,7 @@ export function CourseBenefits() {
                                             className="flex items-start gap-3"
                                         >
                                             <div className="flex-shrink-0 mt-0.5">
-                                                <Check className="h-5 w-5 text-success" />
+                                                <Check className="h-5 w-5 text-green-400" />
                                             </div>
                                             <span className="text-white/90 font-medium">{bonus}</span>
                                         </motion.li>

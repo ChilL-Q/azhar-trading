@@ -1,35 +1,35 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Baby, Briefcase, LayoutDashboard, ShieldCheck } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 import { useTranslation } from "@/i18n/LanguageContext";
 
 export function TargetAudience() {
     const { t } = useTranslation();
     const audiences = [
         {
-            icon: <Baby className="h-8 w-8 text-primary-foreground" />,
+            icon: <CheckCircle2 className="h-8 w-8 text-success" />,
             title: t("pain.card1.title"),
             description: t("pain.card1.desc"),
             bg: "bg-primary/5",
             border: "border-primary/20"
         },
         {
-            icon: <Briefcase className="h-8 w-8 text-accent" />,
+            icon: <CheckCircle2 className="h-8 w-8 text-success" />,
             title: t("pain.card2.title"),
             description: t("pain.card2.desc"),
             bg: "bg-accent/5",
             border: "border-accent/20"
         },
         {
-            icon: <LayoutDashboard className="h-8 w-8 text-foreground" />,
+            icon: <CheckCircle2 className="h-8 w-8 text-success" />,
             title: t("pain.card3.title"),
             description: t("pain.card3.desc"),
             bg: "bg-foreground/5",
             border: "border-foreground/10"
         },
         {
-            icon: <ShieldCheck className="h-8 w-8 text-success" />,
+            icon: <CheckCircle2 className="h-8 w-8 text-success" />,
             title: t("pain.card4.title"),
             description: t("pain.card4.desc"),
             bg: "bg-success/5",
@@ -69,13 +69,15 @@ export function TargetAudience() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "-50px" }}
                             transition={{ delay: index * 0.1 }}
-                            className={`p-6 sm:p-8 rounded-3xl ${audience.bg} border ${audience.border} hover:shadow-lg transition-all duration-300 group`}
+                            className={`p-5 sm:p-6 lg:p-8 rounded-3xl ${audience.bg} border ${audience.border} hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-300 group flex flex-row lg:flex-col gap-4 sm:gap-5 lg:gap-6 items-start`}
                         >
-                            <div className="mb-6 bg-background w-16 h-16 rounded-2xl flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform">
+                            <div className="flex-shrink-0 bg-background w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-2xl flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform">
                                 {audience.icon}
                             </div>
-                            <h3 className="text-xl font-bold mb-3">{audience.title}</h3>
-                            <p className="text-foreground/70 text-sm leading-relaxed">{audience.description}</p>
+                            <div>
+                                <h3 className="text-lg sm:text-xl font-bold mb-1 sm:mb-2 lg:mb-3">{audience.title}</h3>
+                                <p className="text-foreground/70 text-sm leading-relaxed">{audience.description}</p>
+                            </div>
                         </motion.div>
                     ))}
                 </div>

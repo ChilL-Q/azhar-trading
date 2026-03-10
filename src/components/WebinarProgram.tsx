@@ -10,26 +10,26 @@ export function WebinarProgram() {
     const programPoints = [
         {
             title: t("syllabus.m1.title"),
-            description: `${t("syllabus.m1.li1")}. ${t("syllabus.m1.li2")}. ${t("syllabus.m1.li3")}.`,
+            description: [t("syllabus.m1.li1"), t("syllabus.m1.li2"), t("syllabus.m1.li3")].filter(val => val && !val.includes("syllabus.")).join(". ") + ".",
         },
         {
             title: t("syllabus.m2.title"),
-            description: `${t("syllabus.m2.li1")}. ${t("syllabus.m2.li2")}. ${t("syllabus.m2.li3")}.`,
+            description: [t("syllabus.m2.li1"), t("syllabus.m2.li2"), t("syllabus.m2.li3")].filter(val => val && !val.includes("syllabus.")).join(". ") + ".",
         },
         {
             title: t("syllabus.m3.title"),
-            description: `${t("syllabus.m3.li1")}. ${t("syllabus.m3.li2")}. ${t("syllabus.m3.li3")}.`,
+            description: [t("syllabus.m3.li1"), t("syllabus.m3.li2"), t("syllabus.m3.li3")].filter(val => val && !val.includes("syllabus.")).join(". ") + ".",
         },
         {
             title: t("syllabus.m4.title"),
-            description: `${t("syllabus.m4.li1")}. ${t("syllabus.m4.li2")}. ${t("syllabus.m4.li3")}.`,
+            description: [t("syllabus.m4.li1"), t("syllabus.m4.li2"), t("syllabus.m4.li3")].filter(val => val && !val.includes("syllabus.")).join(". ") + ".",
         },
     ];
     return (
-        <section id="program" className="py-24 bg-surface relative">
+        <section id="program" className="py-12 md:py-24 bg-surface relative">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
 
-                <div className="text-center max-w-3xl mx-auto mb-16">
+                <div className="text-center max-w-3xl mx-auto mb-10 md:mb-16">
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -72,14 +72,14 @@ export function WebinarProgram() {
                             <div className="md:hidden absolute left-0 top-1 bottom-0 w-0.5 bg-primary/20"></div>
                             <div className="md:hidden absolute left-[-4px] top-2 h-2.5 w-2.5 rounded-full bg-primary-foreground border-2 border-white"></div>
 
-                            <div id="program" className="bg-surface p-6 rounded-2xl shadow-sm border border-primary/10 hover:border-primary/30 transition-colors">
+                            <div id="program" className="bg-foreground text-background p-6 rounded-2xl shadow-sm border border-primary/10 hover:border-primary/30 transition-colors">
                                 <div className="flex items-start gap-4">
-                                    <div className="hidden md:flex h-10 w-10 shrink-0 bg-primary/10 text-primary-foreground rounded-full items-center justify-center font-bold">
+                                    <div className="hidden md:flex h-10 w-10 shrink-0 bg-background/20 text-background rounded-full items-center justify-center font-bold">
                                         {index + 1}
                                     </div>
                                     <div>
                                         <h3 className="text-xl font-bold mb-2">{point.title}</h3>
-                                        <p className="text-foreground/70 leading-relaxed">{point.description}</p>
+                                        <p className="text-background/70 leading-relaxed">{point.description}</p>
                                     </div>
                                 </div>
                             </div>

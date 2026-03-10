@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, MessageCircle, Send, ArrowRight, CheckCircle2 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useTranslation } from "@/i18n/LanguageContext";
+import Image from "next/image";
 
 interface LeadModalProps {
     isOpen: boolean;
@@ -97,8 +98,8 @@ export function LeadModal({ isOpen, onClose, telegramLink, whatsappLink }: LeadM
                                 {!isSuccess ? (
                                     <>
                                         <div className="text-center mb-8">
-                                            <div className="w-20 h-20 rounded-full overflow-hidden mx-auto mb-4 border border-primary/20 shadow-md">
-                                                <img src="/expert-avatar.jpg" alt="Azhar Trading" className="w-full h-full object-cover object-top" />
+                                            <div className="w-20 h-20 relative rounded-full overflow-hidden mx-auto mb-4 border border-primary/20 shadow-md">
+                                                <Image src="/expert-avatar.jpg" alt="Azhar Trading" fill className="object-cover object-top" sizes="80px" />
                                             </div>
                                             <h3 className="text-2xl font-bold text-foreground mb-2">{t("modal.title")}</h3>
                                             <p className="text-foreground/70 text-sm leading-relaxed">

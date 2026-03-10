@@ -6,6 +6,7 @@ import Autoplay from "embla-carousel-autoplay";
 import { WheelGesturesPlugin } from "embla-carousel-wheel-gestures";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight, ZoomIn } from "lucide-react";
+import Image from "next/image";
 
 const photos = [
     "/gallery/1.jpg",
@@ -82,10 +83,12 @@ export function PhotoGallery() {
                             onClick={() => openLightbox(index)}
                         >
                             <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-lg border border-primary/10 group cursor-pointer h-full transition-transform hover:scale-[1.02]">
-                                <img
+                                <Image
                                     src={src}
-                                    alt={`Фото ${index + 1}`}
-                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                    alt="Фото из галереи"
+                                    fill
+                                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                    sizes="(max-width: 640px) 70vw, (max-width: 768px) 40vw, (max-width: 1024px) 30vw, 22vw"
                                 />
                                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
                                     <ZoomIn className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 w-10 h-10 drop-shadow-lg" />
@@ -145,13 +148,18 @@ export function PhotoGallery() {
                             animate={{ opacity: 1, scale: 1 }}
                             exit={{ opacity: 0, scale: 0.95 }}
                             transition={{ duration: 0.2 }}
-                            className="relative w-full h-full max-w-5xl max-h-[85vh] sm:max-h-[90vh] mx-12 sm:mx-24 flex items-center justify-center"
+                            className="relative w-full h-full max-w-5xl max-h-[85vh] sm:max-h-[90vh] mx-12 sm:mx-24 flex items-center justify-center p-4"
                         >
-                            <img
-                                src={photos[selectedIndex]}
-                                alt={`Фото ${selectedIndex + 1}`}
-                                className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
-                            />
+                            <div className="relative w-full h-full max-h-full">
+                                <Image
+                                    src={photos[selectedIndex]}
+                                    alt="Увеличенное фото из галереи"
+                                    fill
+                                    className="object-contain rounded-lg shadow-2xl"
+                                    sizes="100vw"
+                                    quality={100}
+                                />
+                            </div>
                         </motion.div>
 
                         {/* Navigation Next */}

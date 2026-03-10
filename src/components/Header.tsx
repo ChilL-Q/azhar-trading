@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { useTranslation } from "@/i18n/LanguageContext";
 import { LanguageSwitcher } from "./LanguageSwitcher";
+import Image from "next/image";
 
 interface HeaderProps {
     onOpenModal: () => void;
@@ -20,8 +21,8 @@ export function Header({ onOpenModal }: HeaderProps) {
             className="fixed top-0 left-0 right-0 z-50 flex h-16 sm:h-20 items-center justify-between px-4 sm:px-8 border-b border-primary/10 bg-background/80 backdrop-blur-md"
         >
             <div className="flex items-center gap-2">
-                <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-full overflow-hidden border border-primary/20 shadow-sm flex-shrink-0">
-                    <img src="/expert-avatar.jpg" alt="Azhar Trading" className="w-full h-full object-cover object-top" />
+                <div className="h-10 w-10 sm:h-12 sm:w-12 relative rounded-full overflow-hidden border border-primary/20 shadow-sm flex-shrink-0">
+                    <Image src="/expert-avatar.jpg" alt="Azhar Trading" fill className="object-cover object-top" sizes="(min-width: 640px) 48px, 40px" priority />
                 </div>
                 <div className="flex flex-col">
                     <span className="font-semibold text-sm sm:text-lg tracking-tight text-foreground leading-tight">

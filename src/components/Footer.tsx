@@ -5,6 +5,7 @@ import { useState } from "react";
 import { PrivacyModal } from "./PrivacyModal";
 import { TermsModal } from "./TermsModal";
 import { useTranslation } from "@/i18n/LanguageContext";
+import Image from "next/image";
 
 interface FooterProps {
     telegramLink: string;
@@ -22,8 +23,8 @@ export function Footer({ telegramLink, whatsappLink }: FooterProps) {
                 <div className="flex flex-col md:flex-row items-center justify-between gap-8 mb-12">
 
                     <div className="flex items-center gap-3">
-                        <div className="h-10 w-10 rounded-full bg-accent flex items-center justify-center font-bold text-accent-foreground overflow-hidden">
-                            <img src="/expert-avatar.jpg" alt="Azhar Trading" className="w-full h-full object-cover object-top" />
+                        <div className="h-10 w-10 relative rounded-full bg-accent flex items-center justify-center font-bold text-accent-foreground overflow-hidden">
+                            <Image src="/expert-avatar.jpg" alt="Azhar Trading" fill className="object-cover object-top" sizes="40px" />
                         </div>
                         <div>
                             <span className="font-semibold text-xl tracking-tight block">

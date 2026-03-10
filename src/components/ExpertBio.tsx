@@ -4,11 +4,12 @@ import { motion } from "framer-motion";
 import { GraduationCap, Award, BookOpen } from "lucide-react";
 import { PhotoGallery } from "./PhotoGallery";
 import { useTranslation } from "@/i18n/LanguageContext";
+import Image from "next/image";
 
 export function ExpertBio() {
     const { t } = useTranslation();
     return (
-        <section id="about" className="py-24 bg-background relative overflow-hidden">
+        <section id="about" className="py-12 md:py-24 bg-background relative overflow-hidden">
             {/* Background Decor */}
             <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/10 to-transparent z-0 opacity-50 pointer-events-none" />
             <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-gradient-to-tr from-accent/5 to-transparent z-0 pointer-events-none" />
@@ -25,10 +26,12 @@ export function ExpertBio() {
                     >
                         <div className="relative aspect-[3/4] sm:aspect-square md:aspect-[3/4] rounded-[2.5rem] overflow-hidden shadow-2xl">
                             <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent z-10" />
-                            <img
+                            <Image
                                 src="/expert-avatar.jpg"
                                 alt="Ажар Ергожина"
-                                className="object-cover w-full h-full object-top"
+                                fill
+                                className="object-cover object-top"
+                                sizes="(max-width: 768px) 100vw, 50vw"
                             />
                             <div className="absolute bottom-0 left-0 right-0 p-8 z-20 text-white">
                                 <div className="inline-flex items-center justify-center bg-accent text-accent-foreground px-4 py-1.5 rounded-full text-sm font-semibold mb-3">
@@ -150,12 +153,12 @@ export function ExpertBio() {
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="mt-20 lg:mt-32 max-w-5xl mx-auto"
+                    className="mt-12 md:mt-20 lg:mt-32 max-w-5xl mx-auto"
                 >
                     <div className="p-8 sm:p-12 lg:p-16 bg-surface rounded-[2.5rem] border border-primary/20 relative overflow-hidden shadow-2xl text-center">
                         <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-transparent via-accent to-transparent"></div>
                         <p className="text-xl sm:text-2xl lg:text-3xl text-foreground font-medium leading-relaxed italic tracking-wide">
-                            {t("expert.quote")}
+                            &quot;{t("expert.quote")}&quot;
                         </p>
                     </div>
                 </motion.div>
@@ -166,7 +169,7 @@ export function ExpertBio() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.2 }}
-                    className="mt-20 lg:mt-32"
+                    className="mt-12 md:mt-20 lg:mt-32"
                 >
                     <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-center mb-10 text-foreground uppercase tracking-wider">{t("expert.galleryTitle")}</h3>
                     <PhotoGallery />

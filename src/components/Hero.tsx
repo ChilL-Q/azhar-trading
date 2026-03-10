@@ -13,7 +13,7 @@ export function Hero({ onOpenModal }: HeroProps) {
     const { t } = useTranslation();
 
     return (
-        <section className="relative overflow-hidden bg-background pt-24 pb-32 lg:pt-36 lg:pb-40">
+        <section className="relative overflow-hidden bg-background pt-16 pb-20 lg:pt-36 lg:pb-40">
             {/* Soft gradient background */}
             <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-background z-0" />
 
@@ -75,10 +75,12 @@ export function Hero({ onOpenModal }: HeroProps) {
                     >
                         <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl shadow-primary/20 border border-white/20">
                             <div className="absolute inset-0 bg-gradient-to-tr from-primary-foreground/40 to-transparent z-10 mix-blend-overlay" />
-                            <img
+                            <Image
                                 src="/uptrend-chart.png"
                                 alt="Растущий график инвестиций"
+                                fill
                                 className="object-cover w-full h-full"
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                             />
                             <div className="absolute bottom-6 left-6 right-6 z-20 bg-background/80 backdrop-blur-md rounded-2xl p-4 shadow-xl border border-primary/10">
                                 <div className="flex items-center gap-4">

@@ -12,7 +12,7 @@ export function CourseTeaser({ onOpenModal }: CourseTeaserProps) {
     const { t } = useTranslation();
 
     return (
-        <section className="py-24 bg-surface relative overflow-hidden">
+        <section className="py-12 md:py-24 bg-surface relative overflow-hidden">
 
             {/* Decorative background elements */}
             <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-br from-background to-primary/5 z-0 pointer-events-none" />
@@ -26,12 +26,12 @@ export function CourseTeaser({ onOpenModal }: CourseTeaserProps) {
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="bg-surface rounded-3xl p-8 sm:p-12 shadow-2xl border border-primary/10 relative overflow-hidden"
+                        className="bg-surface rounded-3xl p-6 sm:p-12 shadow-2xl border border-primary/10 relative overflow-hidden"
                     >
                         {/* Soft decorative header inside card */}
                         <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-success via-primary-foreground to-accent" />
 
-                        <div className="text-center mb-12">
+                        <div className="text-center mb-8 sm:mb-12">
                             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
                                 {t("teaser.title")}
                             </h2>
@@ -40,29 +40,32 @@ export function CourseTeaser({ onOpenModal }: CourseTeaserProps) {
                             </p>
                         </div>
 
-                        <div className="grid sm:grid-cols-3 gap-6 mb-10">
-                            <div className="flex flex-col items-center text-center p-6 bg-surface rounded-2xl border border-gray-50 hover:shadow-md transition-shadow">
-                                <div className="h-12 w-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
-                                    <GraduationCap className="h-6 w-6 text-primary-foreground" />
+                        <div className="grid grid-cols-2 sm:flex sm:flex-row justify-center gap-x-2 gap-y-8 sm:gap-10 mb-8 sm:mb-10 text-center relative z-10 p-2">
+                            {/* Card 1 */}
+                            <div className="flex flex-col items-center group justify-start w-full sm:w-auto">
+                                <div className="h-28 w-28 sm:h-32 sm:w-32 bg-background/60 backdrop-blur-md rounded-full flex flex-col items-center justify-center mb-2 sm:mb-4 border border-primary/20 shadow-lg group-hover:scale-105 group-hover:bg-primary/10 transition-all duration-300">
+                                    <GraduationCap className="h-8 w-8 sm:h-10 sm:w-10 text-primary-foreground mb-1" />
                                 </div>
-                                <h4 className="font-bold mb-2">{t("teaser.card1.title")}</h4>
-                                <p className="text-sm text-foreground/60">{t("teaser.card1.desc")}</p>
+                                <h4 className="font-bold text-base sm:text-lg mb-1" dangerouslySetInnerHTML={{ __html: t("teaser.card1.title") }} />
+                                <p className="text-sm text-foreground/70 max-w-[150px] leading-tight sm:leading-normal" dangerouslySetInnerHTML={{ __html: t("teaser.card1.desc") }} />
                             </div>
 
-                            <div className="flex flex-col items-center text-center p-6 bg-surface rounded-2xl border border-gray-50 hover:shadow-md transition-shadow">
-                                <div className="h-12 w-12 bg-success/10 rounded-full flex items-center justify-center mb-4">
-                                    <Radio className="h-6 w-6 text-success" />
+                            {/* Card 2 */}
+                            <div className="flex flex-col items-center group justify-start w-full sm:w-auto">
+                                <div className="h-28 w-28 sm:h-32 sm:w-32 bg-background/60 backdrop-blur-md rounded-full flex flex-col items-center justify-center mb-2 sm:mb-4 border border-success/20 shadow-lg group-hover:scale-105 group-hover:bg-success/10 transition-all duration-300">
+                                    <Radio className="h-8 w-8 sm:h-10 sm:w-10 text-success mb-1" />
                                 </div>
-                                <h4 className="font-bold mb-2">{t("teaser.card2.title")}</h4>
-                                <p className="text-sm text-foreground/60">{t("teaser.card2.desc")}</p>
+                                <h4 className="font-bold text-base sm:text-lg mb-1" dangerouslySetInnerHTML={{ __html: t("teaser.card2.title") }} />
+                                <p className="text-sm text-foreground/70 max-w-[150px] leading-tight sm:leading-normal" dangerouslySetInnerHTML={{ __html: t("teaser.card2.desc") }} />
                             </div>
 
-                            <div className="flex flex-col items-center text-center p-6 bg-surface rounded-2xl border border-gray-50 hover:shadow-md transition-shadow">
-                                <div className="h-12 w-12 bg-accent/10 rounded-full flex items-center justify-center mb-4">
-                                    <Lock className="h-6 w-6 text-accent" />
+                            {/* Card 3 */}
+                            <div className="flex flex-col items-center group justify-start col-span-2 sm:col-auto w-full sm:w-auto">
+                                <div className="h-28 w-28 sm:h-32 sm:w-32 bg-background/60 backdrop-blur-md rounded-full flex flex-col items-center justify-center mb-2 sm:mb-4 border border-accent/20 shadow-lg group-hover:scale-105 group-hover:bg-accent/10 transition-all duration-300">
+                                    <Lock className="h-8 w-8 sm:h-10 sm:w-10 text-accent mb-1" />
                                 </div>
-                                <h4 className="font-bold mb-2">{t("teaser.card3.title")}</h4>
-                                <p className="text-sm text-foreground/60">{t("teaser.card3.desc")}</p>
+                                <h4 className="font-bold text-base sm:text-lg mb-1" dangerouslySetInnerHTML={{ __html: t("teaser.card3.title") }} />
+                                <p className="text-sm text-foreground/70 max-w-[150px] leading-tight sm:leading-normal" dangerouslySetInnerHTML={{ __html: t("teaser.card3.desc") }} />
                             </div>
                         </div>
 
