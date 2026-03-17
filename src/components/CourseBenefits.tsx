@@ -77,19 +77,19 @@ export function CourseBenefits() {
                             initial={{ opacity: 0, x: 20 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
-                            className="bg-[#0369a1] dark:bg-surface rounded-3xl p-8 sm:p-12 shadow-2xl text-white relative h-full"
+                            className="bg-[#0369a1] dark:bg-surface rounded-[2.5rem] p-8 sm:p-12 shadow-2xl text-white relative h-full overflow-hidden"
                         >
                             {/* Decor */}
                             <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-bl from-white/10 to-transparent pointer-events-none" />
 
                             <div className="relative z-10 flex flex-col h-full">
-                                <div className="flex items-center gap-3 mb-8 pb-8 border-b border-white/10">
-                                    <div className="h-14 w-14 bg-white/10 rounded-xl flex items-center justify-center backdrop-blur-sm">
-                                        <Users className="h-8 w-8 text-white" />
+                                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 mb-8 pb-8 border-b border-white/10">
+                                    <div className="flex-shrink-0 h-16 w-16 sm:h-20 sm:w-20 bg-white/10 rounded-2xl flex items-center justify-center backdrop-blur-sm border border-white/20">
+                                        <Users className="h-8 w-8 sm:h-10 sm:w-10 text-white" />
                                     </div>
                                     <div>
-                                        <h3 className="text-2xl font-bold">Обучение:</h3>
-                                        <p className="text-white/70 text-sm whitespace-pre-wrap">{t("benefits.subtitle")}</p>
+                                        <h3 className="text-2xl sm:text-3xl font-bold mb-2">Обучение:</h3>
+                                        <p className="text-white/80 text-sm sm:text-base leading-relaxed whitespace-pre-wrap">{t("benefits.subtitle")}</p>
                                     </div>
                                 </div>
 
@@ -119,6 +119,6 @@ export function CourseBenefits() {
 
                 </div>
             </div>
-        </section>
+        </section >
     );
 }
