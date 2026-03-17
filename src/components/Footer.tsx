@@ -24,7 +24,7 @@ export function Footer({ telegramLink, whatsappLink }: FooterProps) {
 
                     <div className="flex items-center gap-3">
                         <div className="h-10 w-10 relative rounded-full bg-accent flex items-center justify-center font-bold text-accent-foreground overflow-hidden">
-                            <Image src="/avatar-new.jpg" alt="Azhar Trading" fill className="object-cover object-top" sizes="40px" />
+                            <Image src="/avatar-new.jpg" alt="Azhar Trading" fill className="object-cover object-center" sizes="40px" />
                         </div>
                         <div>
                             <span className="font-semibold text-xl tracking-tight block">

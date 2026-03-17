@@ -22,7 +22,7 @@ export function Header({ onOpenModal }: HeaderProps) {
         >
             <div className="flex items-center gap-2">
                 <div className="h-10 w-10 sm:h-12 sm:w-12 relative rounded-full overflow-hidden border border-primary/20 shadow-sm flex-shrink-0">
-                    <Image src="/avatar-new.jpg" alt="Azhar Trading" fill className="object-cover object-top" sizes="(min-width: 640px) 48px, 40px" priority />
+                    <Image src="/avatar-new.jpg" alt="Azhar Trading" fill className="object-cover object-center" sizes="(min-width: 640px) 48px, 40px" priority />
                 </div>
                 <div className="flex flex-col">
                     <span className="font-semibold text-sm sm:text-lg tracking-tight text-foreground leading-tight">

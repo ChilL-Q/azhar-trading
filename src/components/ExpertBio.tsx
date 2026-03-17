@@ -30,7 +30,7 @@ export function ExpertBio() {
                                 src="/avatar-new.jpg"
                                 alt="Ажар Ергожина"
                                 fill
-                                className="object-cover object-top"
+                                className="object-cover object-center"
                                 sizes="(max-width: 768px) 100vw, 50vw"
                             />
                             <div className="absolute bottom-0 left-0 right-0 p-8 z-20 text-white">
