@@ -27,7 +27,7 @@ export function ExpertBio() {
                         <div className="relative aspect-[3/4] sm:aspect-square md:aspect-[3/4] rounded-[2.5rem] overflow-hidden shadow-2xl">
                             <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent z-10" />
                             <Image
-                                src="/expert-avatar.jpg"
+                                src="/avatar-new.jpg"
                                 alt="Ажар Ергожина"
                                 fill
                                 className="object-cover object-top"

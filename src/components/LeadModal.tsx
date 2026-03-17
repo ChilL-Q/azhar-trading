@@ -99,7 +99,7 @@ export function LeadModal({ isOpen, onClose, telegramLink, whatsappLink }: LeadM
                                     <>
                                         <div className="text-center mb-8">
                                             <div className="w-20 h-20 relative rounded-full overflow-hidden mx-auto mb-4 border border-primary/20 shadow-md">
-                                                <Image src="/expert-avatar.jpg" alt="Azhar Trading" fill className="object-cover object-top" sizes="80px" />
+                                                <Image src="/avatar-new.jpg" alt="Azhar Trading" fill className="object-cover object-top" sizes="80px" />
                                             </div>
                                             <h3 className="text-2xl font-bold text-foreground mb-2">{t("modal.title")}</h3>
                                             <p className="text-foreground/70 text-sm leading-relaxed">
