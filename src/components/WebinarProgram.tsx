@@ -87,6 +87,24 @@ export function WebinarProgram() {
                     ))}
                 </div>
 
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.6 }}
+                    className="mt-16 p-6 rounded-2xl bg-foreground/5 border border-foreground/10 max-w-4xl mx-auto"
+                >
+                    <div className="flex flex-col md:flex-row items-center gap-4 text-center md:text-left">
+                        <div className="p-3 bg-amber-500/10 rounded-xl">
+                            <AlertTriangle className="h-6 w-6 text-amber-500" />
+                        </div>
+                        <div>
+                            <p className="text-sm text-foreground/70 leading-relaxed italic">
+                                {t("footer.risk_warning")} {t("disclaimer.p5")}
+                            </p>
+                        </div>
+                    </div>
+                </motion.div>
             </div>
         </section>
     );

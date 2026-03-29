@@ -4,6 +4,7 @@ import { MessageCircle, Send } from "lucide-react";
 import { useState } from "react";
 import { PrivacyModal } from "./PrivacyModal";
 import { TermsModal } from "./TermsModal";
+import { RiskModal } from "./RiskModal";
 import { useTranslation } from "@/i18n/LanguageContext";
 import Image from "next/image";
 
@@ -16,6 +17,7 @@ export function Footer({ telegramLink, whatsappLink }: FooterProps) {
     const { t } = useTranslation();
     const [isPrivacyOpen, setIsPrivacyOpen] = useState(false);
     const [isTermsOpen, setIsTermsOpen] = useState(false);
+    const [isRiskOpen, setIsRiskOpen] = useState(false);
 
     return (
         <footer className="bg-slate-950 text-white py-12 border-t border-white/5">
@@ -57,17 +59,24 @@ export function Footer({ telegramLink, whatsappLink }: FooterProps) {
 
                 </div>
 
-                <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 border-t border-white/5 text-sm text-white/50">
-                    <p>© {new Date().getFullYear()} Azhar Trading. {t("footer.rights")}</p>
-                    <div className="flex items-center gap-6">
+                <div className="flex flex-col md:flex-row items-center justify-between gap-6 pt-8 border-t border-white/5 text-sm text-white/50">
+                    <div className="max-w-xl text-center md:text-left">
+                        <p className="mb-2">© {new Date().getFullYear()} Azhar Trading. {t("footer.rights")}</p>
+                        <p className="text-[10px] sm:text-xs leading-tight opacity-70">
+                            {t("footer.risk_warning")}
+                        </p>
+                    </div>
+                    <div className="flex flex-wrap justify-center items-center gap-6">
                         <button onClick={() => setIsPrivacyOpen(true)} className="hover:text-white transition-colors">{t("footer.privacy")}</button>
                         <button onClick={() => setIsTermsOpen(true)} className="hover:text-white transition-colors">{t("footer.terms")}</button>
+                        <button onClick={() => setIsRiskOpen(true)} className="hover:text-white transition-colors underline decoration-white/20 underline-offset-4">{t("footer.disclaimer")}</button>
                     </div>
                 </div>
             </div>
 
             <PrivacyModal isOpen={isPrivacyOpen} onClose={() => setIsPrivacyOpen(false)} />
             <TermsModal isOpen={isTermsOpen} onClose={() => setIsTermsOpen(false)} />
+            <RiskModal isOpen={isRiskOpen} onClose={() => setIsRiskOpen(false)} />
         </footer>
     );
 }
