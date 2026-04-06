@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { CheckCircle2, AlertTriangle, Infinity } from "lucide-react";
+import { CheckCircle2, AlertTriangle } from "lucide-react";
 import { useTranslation } from "@/i18n/LanguageContext";
 
 export function WebinarProgram() {
@@ -72,7 +72,7 @@ export function WebinarProgram() {
                             <div className="md:hidden absolute left-0 top-1 bottom-0 w-0.5 bg-primary/20"></div>
                             <div className="md:hidden absolute left-[-4px] top-2 h-2.5 w-2.5 rounded-full bg-primary-foreground border-2 border-white"></div>
 
-                            <div id="program" className="bg-foreground text-background p-6 rounded-2xl shadow-sm border border-primary/10 hover:border-primary/30 transition-colors">
+                            <div className="bg-foreground text-background p-6 rounded-2xl shadow-sm border border-primary/10 hover:border-primary/30 transition-colors">
                                 <div className="flex items-start gap-4">
                                     <div className="hidden md:flex h-10 w-10 shrink-0 bg-background/20 text-background rounded-full items-center justify-center font-bold">
                                         {index + 1}

@@ -32,7 +32,7 @@ export function Footer({ telegramLink, whatsappLink }: FooterProps) {
                             <span className="font-semibold text-xl tracking-tight block">
                                 Azhar Trading
                             </span>
-                            <span className="text-sm text-white/50 block">Халяль инвестиции</span>
+                            <span className="text-sm text-white/50 block">{t("footer.tagline")}</span>
                         </div>
                     </div>
 

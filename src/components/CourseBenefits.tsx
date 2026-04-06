@@ -88,7 +88,7 @@ export function CourseBenefits() {
                                         <Users className="h-8 w-8 sm:h-10 sm:w-10 text-white" />
                                     </div>
                                     <div>
-                                        <h3 className="text-2xl sm:text-3xl font-bold mb-2">Обучение:</h3>
+                                        <h3 className="text-2xl sm:text-3xl font-bold mb-2">{t("benefits.trainingLabel")}</h3>
                                         <p className="text-white/80 text-sm sm:text-base leading-relaxed whitespace-pre-wrap">{t("benefits.subtitle")}</p>
                                     </div>
                                 </div>

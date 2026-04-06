@@ -28,7 +28,7 @@ export function Header({ onOpenModal }: HeaderProps) {
                     <span className="font-semibold text-sm sm:text-lg tracking-tight text-foreground leading-tight">
                         Azhar Trading
                     </span>
-                    <span className="text-[10px] sm:text-xs text-foreground/50 font-medium">Халяль инвестиции</span>
+                    <span className="text-[10px] sm:text-xs text-foreground/50 font-medium">{t("header.tagline")}</span>
                 </div>
             </div>
 

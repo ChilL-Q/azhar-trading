@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ArrowLeft } from "lucide-react";
 import { useEffect } from "react";
+import { useTranslation } from "@/i18n/LanguageContext";
 
 interface TermsModalProps {
     isOpen: boolean;
@@ -10,6 +11,7 @@ interface TermsModalProps {
 }
 
 export function TermsModal({ isOpen, onClose }: TermsModalProps) {
+    const { t } = useTranslation();
     useEffect(() => {
         if (isOpen) {
             document.body.style.overflow = "hidden";
@@ -45,7 +47,7 @@ export function TermsModal({ isOpen, onClose }: TermsModalProps) {
                                     className="inline-flex items-center text-primary-foreground hover:text-primary transition-colors mb-4 font-medium self-start"
                                 >
                                     <ArrowLeft className="mr-2 h-4 w-4" />
-                                    Вернуться на главную
+                                    {t("terms.backToHome")}
                                 </button>
                                 <div className="flex items-center justify-between">
                                     <div>

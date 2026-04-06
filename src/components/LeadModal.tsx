@@ -139,9 +139,9 @@ export function LeadModal({ isOpen, onClose, telegramLink, whatsappLink }: LeadM
                                                 {isSubmitting ? t("modal.wait") : t("modal.btn")}
                                                 {!isSubmitting && <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />}
                                             </button>
-                                            <p className="text-xs text-center text-foreground/50 mt-2">
-                                                Нажимая на кнопку, вы соглашаетесь с Политикой конфиденциальности
-                                            </p>
+                                                <p className="text-xs text-center text-foreground/50 mt-2">
+                                                    {t("modal.privacyAgree")}
+                                                </p>
                                         </form>
                                     </>
                                 ) : (

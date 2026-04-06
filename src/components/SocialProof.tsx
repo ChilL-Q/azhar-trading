@@ -71,8 +71,8 @@ export function SocialProof() {
                         transition={{ delay: 0.2 }}
                         className="inline-flex flex-col sm:flex-row items-center justify-center gap-3 bg-accent/10 border border-accent/30 text-accent-foreground px-6 py-4 rounded-2xl shadow-sm mb-4"
                     >
-                        <span className="font-bold text-lg text-foreground">Где вы будете получать все обновления стратегии БЕСПЛАТНО?</span>
-                        <span className="text-foreground/80 text-sm">В нашем закрытом комьюнити выпускников</span>
+                        <span className="font-bold text-lg text-foreground">{t("social.communityQ")}</span>
+                        <span className="text-foreground/80 text-sm">{t("social.communityA")}</span>
                     </motion.div>
                 </div>
 
@@ -88,9 +88,9 @@ export function SocialProof() {
 
                     <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 lg:items-center relative z-10">
                         <div className="lg:w-1/3">
-                            <span className="inline-block py-1 px-3 rounded-full bg-accent/20 text-accent font-semibold text-xs mb-3">Кейс ученицы</span>
-                            <h3 className="text-2xl sm:text-3xl font-bold mb-1">Акнур Ханым</h3>
-                            <p className="text-sm sm:text-base text-foreground/60 mb-5">С нуля до системного инвестора</p>
+                            <span className="inline-block py-1 px-3 rounded-full bg-accent/20 text-accent font-semibold text-xs mb-3">{t("social.caseBadge")}</span>
+                            <h3 className="text-2xl sm:text-3xl font-bold mb-1">{t("social.caseName")}</h3>
+                            <p className="text-sm sm:text-base text-foreground/60 mb-5">{t("social.caseRole")}</p>
 
                             <div className="flex items-center gap-4 border-t border-primary/10 pt-5">
                                 <div>
@@ -105,7 +105,7 @@ export function SocialProof() {
                         <div className="lg:w-2/3 lg:pl-8 lg:border-l border-primary/20">
                             <Quote className="h-8 w-8 sm:h-10 sm:w-10 text-primary/40 mb-3" />
                             <p className="text-base sm:text-xl leading-relaxed text-foreground/80 italic">
-                                &laquo;Я никогда не держала в руках акций и боялась слова &quot;биржа&quot;. Боялась, что попаду в риба. Но алгоритмы Устазы по отбору халяльных акций дали мне уверенность. Я собрала правильный портфель, и сейчас мой пассивный доход покрывает часть расходов семьи!&raquo;
+                                {t("social.caseQuote")}
                             </p>
                         </div>
                     </div>

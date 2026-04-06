@@ -47,7 +47,7 @@ export function PainPoints() {
     ];
 
     return (
-        <section id="about" className="py-12 md:py-24 bg-surface relative">
+        <section id="fears" className="py-12 md:py-24 bg-surface relative">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
 
                 {/* Section Header */}
