@@ -34,6 +34,20 @@ export const SlideTemplate = ({ slide, isActive }: { slide: SlideData; isActive:
     }
   };
 
+  const renderTextWithStrikethrough = (text: string) => {
+    const parts = text.split(/(~.*?~)/g);
+    return parts.map((part, index) => {
+      if (part.startsWith('~') && part.endsWith('~')) {
+        return (
+          <span key={index} className="line-through opacity-50 decoration-2 decoration-red-500/50">
+            {part.slice(1, -1)}
+          </span>
+        );
+      }
+      return <React.Fragment key={index}>{part}</React.Fragment>;
+    });
+  };
+
   const IconComponent = slide.icon;
 
   return (
@@ -141,7 +155,7 @@ export const SlideTemplate = ({ slide, isActive }: { slide: SlideData; isActive:
                            </div>
                         </div>
                         <p className="text-base md:text-lg 2xl:text-[1.5rem] leading-snug text-slate-800 group-hover:text-emerald-950 transition-colors duration-300">
-                          {item}
+                          {renderTextWithStrikethrough(item)}
                         </p>
                       </motion.div>
                     ))}
@@ -199,7 +213,7 @@ export const SlideTemplate = ({ slide, isActive }: { slide: SlideData; isActive:
                        <CheckCircle2 className="w-6 h-6 2xl:w-8 2xl:h-8 text-emerald-500 group-hover:text-emerald-600 transition-colors" strokeWidth={2} />
                     </div>
                     <p className="text-base sm:text-lg 2xl:text-[1.3rem] leading-relaxed text-slate-700 font-medium group-hover:text-emerald-950 transition-colors relative z-10">
-                      {item}
+                      {renderTextWithStrikethrough(item)}
                     </p>
                   </motion.div>
                 ))}
